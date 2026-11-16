@@ -107,6 +107,16 @@ Add to `~/.codeium/windsurf/mcp_config.json`:
 }
 ```
 
+## claude.ai (web and desktop)
+
+Add the server as a custom connector: **Settings → Connectors → Add custom connector**, paste the server URL, and complete the browser login. Custom connectors are available on paid Claude plans.
+
+## ChatGPT
+
+In **Settings → Apps & Connectors**, enable **Developer mode** (under advanced settings; available on Plus/Pro/Business plans), then create a new connector with the server URL. ChatGPT requires exactly what this server provides: streamable HTTP transport at a stable HTTPS endpoint with OAuth 2.1 login.
+
+For listing in the official ChatGPT app directory, the server must additionally pass OpenAI's domain verification and app review — see the [Apps SDK deployment docs](https://developers.openai.com/apps-sdk/deploy/).
+
 ## Other MCP clients
 
 Any client that speaks streamable HTTP MCP with OAuth (dynamic client registration, RFC 7591) can connect to the URL above. For stdio-only clients, use the `mcp-remote` wrapper shown in the Codex section.
