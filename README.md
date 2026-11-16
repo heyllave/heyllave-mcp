@@ -50,9 +50,66 @@ command = "npx"
 args = ["-y", "mcp-remote", "https://mcp.heyllave.co/api/v1/agent/mcp"]
 ```
 
+## Cursor
+
+One-click install:
+
+[![Add to Cursor](https://img.shields.io/badge/Add_to-Cursor-black)](https://cursor.com/install-mcp?name=heyllave&config=eyJ1cmwiOiJodHRwczovL21jcC5oZXlsbGF2ZS5jby9hcGkvdjEvYWdlbnQvbWNwIn0%3D)
+
+Or add to `~/.cursor/mcp.json` (global) or `.cursor/mcp.json` (per project):
+
+```json
+{
+  "mcpServers": {
+    "heyllave": {
+      "url": "https://mcp.heyllave.co/api/v1/agent/mcp"
+    }
+  }
+}
+```
+
+## VS Code (GitHub Copilot)
+
+```sh
+code --add-mcp '{"name":"heyllave","type":"http","url":"https://mcp.heyllave.co/api/v1/agent/mcp"}'
+```
+
+Or add to `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "heyllave": {
+      "type": "http",
+      "url": "https://mcp.heyllave.co/api/v1/agent/mcp"
+    }
+  }
+}
+```
+
+## Gemini CLI
+
+```sh
+gemini mcp add --transport http heyllave https://mcp.heyllave.co/api/v1/agent/mcp
+```
+
+## Windsurf
+
+Add to `~/.codeium/windsurf/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "heyllave": {
+      "serverUrl": "https://mcp.heyllave.co/api/v1/agent/mcp"
+    }
+  }
+}
+```
+
 ## Other MCP clients
 
-Any client that speaks streamable HTTP MCP with OAuth (dynamic client registration, RFC 7591) can connect to the URL above. For stdio-only clients, use the same `mcp-remote` wrapper shown for Codex.
+Any client that speaks streamable HTTP MCP with OAuth (dynamic client registration, RFC 7591) can connect to the URL above. For stdio-only clients, use the `mcp-remote` wrapper shown in the Codex section.
 
 ## What's in this repo
 
