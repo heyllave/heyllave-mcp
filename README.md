@@ -31,22 +31,24 @@ claude mcp add --transport http heyllave https://mcp.heyllave.co/api/v1/agent/mc
 
 ## Codex
 
-The most portable path is the [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) stdio wrapper, which handles the OAuth flow itself. Add to `~/.codex/config.toml`:
+This repo is also a [Codex plugin marketplace](https://developers.openai.com/plugins/build/plugins). Add it, then install the plugin:
+
+```sh
+codex plugin marketplace add heyllave/heyllave-mcp
+codex plugin add heyllave-mcp@heyllave
+```
+
+The plugin declares the server as `streamable-http` with OAuth via dynamic client registration, so Codex walks you through the browser login on first use.
+
+### Without the plugin system
+
+For older Codex versions, the [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) stdio wrapper handles the OAuth flow itself. Add to `~/.codex/config.toml`:
 
 ```toml
 [mcp_servers.heyllave]
 command = "npx"
 args = ["-y", "mcp-remote", "https://mcp.heyllave.co/api/v1/agent/mcp"]
 ```
-
-Recent Codex versions also support streamable HTTP servers natively; if yours does, you can instead use:
-
-```toml
-[mcp_servers.heyllave]
-url = "https://mcp.heyllave.co/api/v1/agent/mcp"
-```
-
-Check your Codex version's MCP documentation for the exact keys if the native form doesn't connect.
 
 ## Other MCP clients
 
@@ -56,7 +58,10 @@ Any client that speaks streamable HTTP MCP with OAuth (dynamic client registrati
 
 ```
 .claude-plugin/marketplace.json      # Claude Code marketplace manifest
+.agents/plugins/marketplace.json     # Codex marketplace catalog
 plugins/heyllave/
-  .claude-plugin/plugin.json         # plugin metadata
-  .mcp.json                          # MCP server definition
+  .claude-plugin/plugin.json         # Claude Code plugin metadata
+  .mcp.json                          # MCP server definition (Claude Code)
+  plugin.json                        # portable plugin manifest (Codex)
+  mcp.json                           # MCP server definition (Codex, with OAuth/DCR config)
 ```

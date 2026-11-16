@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "heyllave-mcp",
+  "version": "0.1.0",
+  "description": "Connect your agent to your heyllave workspace: list and inspect work orders, customers and catalog through the heyllave MCP server.",
+  "author": {
+    "name": "heyllave"
+  },
+  "homepage": "https://heyllave.co",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "heyllave",
+        "shortDescription": "Work orders, customers and catalog from your heyllave tenant.",
+        "category": "Productivity"
+      }
+    }
+  }
+}
