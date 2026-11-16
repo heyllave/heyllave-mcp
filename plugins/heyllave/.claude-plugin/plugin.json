@@ -1,7 +1,7 @@
 {
   "name": "heyllave-mcp",
   "description": "Connect Claude to your heyllave workspace: list and inspect work orders, customers and catalog through the heyllave MCP server.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "heyllave",
     "url": "https://heyllave.co"

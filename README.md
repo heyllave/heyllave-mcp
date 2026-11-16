@@ -131,4 +131,8 @@ plugins/heyllave/
   .mcp.json                          # MCP server definition (Claude Code)
   plugin.json                        # portable plugin manifest (Codex)
   mcp.json                           # MCP server definition (Codex, with OAuth/DCR config)
+  skills/
+    setup-catalog/SKILL.md           # migrate data into heyllave, set up the catalog
+    work-orders-report/SKILL.md      # build reports from work orders
+    create-dashboard/SKILL.md        # build KPI dashboards from heyllave data
 ```
