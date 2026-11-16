@@ -15,11 +15,11 @@ Authentication is OAuth: the first time your client connects, it opens a browser
 Add this repo as a plugin marketplace, then install the plugin:
 
 ```sh
-claude plugin marketplace add davixcky/heyllave-mcp
+claude plugin marketplace add heyllave/heyllave-mcp
 claude plugin install heyllave-mcp@heyllave
 ```
 
-Or interactively: run `/plugin` inside Claude Code, add the `davixcky/heyllave-mcp` marketplace, and install **heyllave-mcp**. On first use, run `/mcp` and select **heyllave** to complete the OAuth login.
+Or interactively: run `/plugin` inside Claude Code, add the `heyllave/heyllave-mcp` marketplace, and install **heyllave-mcp**. On first use, run `/mcp` and select **heyllave** to complete the OAuth login.
 
 ### Without the plugin system
 
