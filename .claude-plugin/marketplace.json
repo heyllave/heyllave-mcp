@@ -1,0 +1,25 @@
+{
+  "name": "heyllave",
+  "owner": {
+    "name": "heyllave",
+    "url": "https://heyllave.co"
+  },
+  "metadata": {
+    "description": "Official heyllave plugin marketplace: connect AI agents to your heyllave workspace.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "heyllave-mcp",
+      "source": "./plugins/heyllave",
+      "description": "heyllave MCP server — work orders, customers and catalog from your heyllave tenant.",
+      "author": {
+        "name": "heyllave",
+        "url": "https://heyllave.co"
+      },
+      "homepage": "https://heyllave.co",
+      "category": "productivity",
+      "keywords": ["heyllave", "work-orders", "erp", "mcp"]
+    }
+  ]
+}
