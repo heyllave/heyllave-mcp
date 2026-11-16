@@ -113,7 +113,17 @@ Add the server as a custom connector: **Settings → Connectors → Add custom c
 
 ## ChatGPT
 
-In **Settings → Apps & Connectors**, enable **Developer mode** (under advanced settings; available on Plus/Pro/Business plans), then create a new connector with the server URL. ChatGPT requires exactly what this server provides: streamable HTTP transport at a stable HTTPS endpoint with OAuth 2.1 login.
+ChatGPT cannot use heyllave's automatic registration (that is reserved for the Claude Code and Codex loopback profiles), so it needs a tenant-approved OAuth client first:
+
+1. A heyllave administrator (with the `oauth_clients.manage` permission) registers the client once:
+
+   ```
+   POST /api/v1/auth/oauth2/clients
+   { "client_id": "heyllave-chatgpt", "name": "ChatGPT",
+     "redirect_uris": ["https://chatgpt.com/connector_platform_oauth_redirect"] }
+   ```
+
+2. In ChatGPT: **Settings → Apps & Connectors**, enable **Developer mode** (advanced settings; Plus/Pro/Business plans), create a connector with the server URL, and set the **OAuth Client ID** to `heyllave-chatgpt` in the connector settings. Leave the client secret empty — heyllave uses public clients with PKCE only.
 
 For listing in the official ChatGPT app directory, the server must additionally pass OpenAI's domain verification and app review — see the [Apps SDK deployment docs](https://developers.openai.com/apps-sdk/deploy/).
 
